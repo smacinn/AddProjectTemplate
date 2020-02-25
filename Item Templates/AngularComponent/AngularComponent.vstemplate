@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
+  <TemplateData>
+    <Name>AngularJS Material Component</Name>
+    <Description>Stubs out an AngularJS component ready to have material styles applied.</Description>
+    <Icon>icon.png</Icon>
+    <TemplateID>ff93eef8-d0cb-49c7-ad85-d5858c1c4939</TemplateID>
+    <ProjectType>CSharp</ProjectType>
+    <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <DefaultName>component</DefaultName>
+  </TemplateData>
+  <TemplateContent>
+    <References>
+      <Reference>
+        <Assembly>System</Assembly>
+      </Reference>
+    </References>
+      <ProjectItem ReplaceParameters="true" TargetFileName="$rootname$\$safeitemname$.js">component\component.js</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="$rootname$\$safeitemname$.html">component\component.html</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="$rootname$\_$safeitemname$.scss">component\_component.scss</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="$rootname$\_$safeitemname$-theme.css">component\_component-theme.css</ProjectItem>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>AddProjectTemplate, Version=1.0.0.0, Culture=Neutral, PublicKeyToken=86d970f69e4c60ef</Assembly>
+    <FullClassName>Steven.Macinnis.AddProjectTemplate.Wizard.CustomWizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>

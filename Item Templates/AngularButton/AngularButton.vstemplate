@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
+  <TemplateData>
+    <Name>AngularJS Material Button</Name>
+    <Description>Stubs out a fontawesom material button component that is meant to be reused.</Description>
+    <Icon>icon.png</Icon>
+    <TemplateID>e5a1a890-7488-46ae-a646-aadbfe11ea38</TemplateID>
+    <ProjectType>CSharp</ProjectType>
+    <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <DefaultName>button</DefaultName>
+  </TemplateData>
+  <TemplateContent>
+    <References>
+      <Reference>
+        <Assembly>System</Assembly>
+      </Reference>
+    </References>
+    <ProjectItem ReplaceParameters="true" TargetFileName="$rootname$\$safeitemname$.js">button\button.js</ProjectItem>
+    <ProjectItem ReplaceParameters="true" TargetFileName="$rootname$\$safeitemname$.html">button\button.html</ProjectItem>
+    <ProjectItem ReplaceParameters="true" TargetFileName="$rootname$\_$safeitemname$.scss">button\_button.scss</ProjectItem>
+    <ProjectItem ReplaceParameters="true" TargetFileName="$rootname$\_$safeitemname$-theme.css">button\_button-theme.css</ProjectItem>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>AddProjectTemplate, Version=1.0.0.0, Culture=Neutral, PublicKeyToken=86d970f69e4c60ef</Assembly>
+    <FullClassName>Steven.Macinnis.AddProjectTemplate.Wizard.CustomWizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>

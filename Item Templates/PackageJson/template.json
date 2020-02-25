@@ -1,0 +1,12 @@
+{
+	"version": "1.0.0",
+	"templateFolders": [
+		"CustomItemTemplates"
+	],
+	"replacementValues": [
+		{
+			"placeholder": "$Test$",
+			"value": "Here's Waldo"
+		}
+	]
+}

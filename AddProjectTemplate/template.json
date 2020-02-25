@@ -1,0 +1,11 @@
+{
+  "templateFolders": [
+    "$solutionFolder$/CustomItemTemplates"
+  ],
+  "replacementValues": [
+    {
+      "placeholder": "$Test%",
+      "value": "Here's Waldo"
+    }
+  ]
+}

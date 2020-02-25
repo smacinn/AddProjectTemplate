@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
+  <TemplateData>
+    <Name>Template.json</Name>
+    <Description>PackageJson</Description>
+    <Icon>PackageJson.ico</Icon>
+    <TemplateID>dabddac5-3e64-4796-9b23-bd43522abd97</TemplateID>
+    <ProjectType>CSharp</ProjectType>
+    <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <DefaultName>template.json</DefaultName>
+  </TemplateData>
+  <TemplateContent>
+    <References>
+      <Reference>
+        <Assembly>System</Assembly>
+      </Reference>
+    </References>
+    <Folder Name="CustomItemTemplates">
+      
+    </Folder>
+    <ProjectItem ReplaceParameters="false" TargetFileName="template.json">template.json</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

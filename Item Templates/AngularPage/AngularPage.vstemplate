@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
+  <TemplateData>
+    <Name>AngularPage</Name>
+    <Description>AngularPage</Description>
+    <Icon>icon.png</Icon>
+    <TemplateID>3788d057-7ca7-4630-8cb1-211979c15b25</TemplateID>
+    <ProjectType>CSharp</ProjectType>
+    <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <DefaultName>page</DefaultName>
+  </TemplateData>
+  <TemplateContent>
+    <References>
+      <Reference>
+        <Assembly>System</Assembly>
+      </Reference>
+    </References>
+    <ProjectItem ReplaceParameters="true" TargetFileName="$rootname$\$safeitemname$.js">page\page.js</ProjectItem>
+    <ProjectItem ReplaceParameters="true" TargetFileName="$rootname$\$safeitemname$.html">page\page.html</ProjectItem>
+    <ProjectItem ReplaceParameters="true" TargetFileName="$rootname$\_$safeitemname$.scss">page\_page.scss</ProjectItem>
+    <ProjectItem ReplaceParameters="true" TargetFileName="$rootname$\_$safeitemname$-theme.css">page\_page-theme.css</ProjectItem>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>AddProjectTemplate, Version=1.0.0.0, Culture=Neutral, PublicKeyToken=86d970f69e4c60ef</Assembly>
+    <FullClassName>Steven.Macinnis.AddProjectTemplate.Wizard.CustomWizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>

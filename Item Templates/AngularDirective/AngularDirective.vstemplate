@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
+  <TemplateData>
+    <Name>AngularJS Material Directive</Name>
+    <Description>Stubs out an AngularJS directive ready to have material styles applied</Description>
+    <Icon>icon.png</Icon>
+    <TemplateID>05711677-71ad-4d7a-b84e-cb337ec827b3</TemplateID>
+    <ProjectType>CSharp</ProjectType>
+    <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <DefaultName>directive</DefaultName>
+  </TemplateData>
+  <TemplateContent>
+    <References>
+      <Reference>
+        <Assembly>System</Assembly>
+      </Reference>
+    </References>
+    <ProjectItem ReplaceParameters="true" TargetFileName="$rootname$\$safeitemname$.js">directive\directive.js</ProjectItem>
+    <ProjectItem ReplaceParameters="true" TargetFileName="$rootname$\$safeitemname$.html">directive\directive.html</ProjectItem>
+    <ProjectItem ReplaceParameters="true" TargetFileName="$rootname$\_$safeitemname$.scss">directive\_directive.scss</ProjectItem>
+    <ProjectItem ReplaceParameters="true" TargetFileName="$rootname$\_$safeitemname$-theme.css">directive\_directive-theme.css</ProjectItem>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>AddProjectTemplate, Version=1.0.0.0, Culture=Neutral, PublicKeyToken=86d970f69e4c60ef</Assembly>
+    <FullClassName>Steven.Macinnis.AddProjectTemplate.Wizard.CustomWizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>
