@@ -172,10 +172,25 @@ namespace Steven.Macinnis.AddProjectTemplate
                     }
                 }
             }
+            AddTemplateWindow window = null;
+            ProcessTemplateEventHandler handler = null;
+
+            handler = (eSender, evt) =>
+            {
+                var selectedTemplate = templateList[evt.TemplateName];
+                if (selectedTemplate.TemplateType == Enums.TemplateType.ITEMTEMPLATE)
+                {
+                    //_dte.Solution.AddFromTemplate();
+                }
+                else
+                {
+                    //_dte.Solution.
+                }
+            };
 
             this.package.JoinableTaskFactory.RunAsync(async delegate
             {
-                AddTemplateWindow window = await this.package.ShowToolWindowAsync(typeof(AddTemplateWindow), 0, true, this.package.DisposalToken) as AddTemplateWindow;
+                window = await this.package.ShowToolWindowAsync(typeof(AddTemplateWindow), 0, true, this.package.DisposalToken) as AddTemplateWindow;
                 if ((null == window) || (null == window.Frame))
                 {
                     throw new NotSupportedException("Cannot create tool window");
@@ -183,27 +198,8 @@ namespace Steven.Macinnis.AddProjectTemplate
                 window.Templates = templateList;
                 //window.ReplacementValues = replacementsDictionary;
 
-                ProcessTemplateEventHandler handler = null;
-                try
-                {
-                    handler = (eSender, evt) =>
-                    {
-                        if (evt.Template.TemplateType == Enums.TemplateType.ITEMTEMPLATE)
-                        {
-                            //_dte.Solution.AddFromTemplate();
-                        }
-                        else
-                        {
-                            //_dte.Solution.
-                        }
-                    };
-
-                    window.ProcessTemplate += handler;
-                }
-                finally
-                {
-                    window.ProcessTemplate -= handler;
-                }
+                window.ProcessTemplate += handler;
+                
             });
         }
 

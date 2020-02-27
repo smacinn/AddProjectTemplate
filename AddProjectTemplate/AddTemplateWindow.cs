@@ -23,14 +23,15 @@ namespace Steven.Macinnis.AddProjectTemplate
     public class AddTemplateWindow : ToolWindowPane
     {
         Dictionary<string, TemplateItem> _templates = new Dictionary<string, TemplateItem>();
-       // Dictionary<string, string> _replacements = new Dictionary<string, string>();
-
+        // Dictionary<string, string> _replacements = new Dictionary<string, string>();
+        AddTemplateWindowControl _content = null;
         public event ProcessTemplateEventHandler ProcessTemplate;
 
-        protected virtual void OnProcessTemplate(TemplateItem template)
+        protected virtual void OnProcessTemplate(string template, string filename)
         {
             var e = new ProcessTemplateEventArgs();
-            e.Template = template;
+            e.TemplateName = template;
+            e.Filename = filename;
             //e.ReplacementDictionary = _replacements;
 
             ProcessTemplateEventHandler handler = ProcessTemplate;
@@ -47,13 +48,23 @@ namespace Steven.Macinnis.AddProjectTemplate
             // This is the user control hosted by the tool window; Note that, even if this class implements IDisposable,
             // we are not calling Dispose on this object. This is because ToolWindowPane calls Dispose on
             // the object returned by the Content property.
-            this.Content = new AddTemplateWindowControl();
+            _content = new AddTemplateWindowControl();
+            _content.AddTemplate += (sender, evt) =>
+            {
+                OnProcessTemplate(evt.TemplateName, evt.Filename);
+            };
+
+            this.Content = _content;
         }
         public Dictionary<string, TemplateItem> Templates
         {
             set
             {
                 _templates = value;
+                if(_content != null)
+                {
+                    _content.AddItems(_templates);
+                }
             }
         }
 

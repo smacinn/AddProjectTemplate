@@ -10,7 +10,6 @@ namespace Steven.Macinnis.AddProjectTemplate
     public class ProcessTemplateEventArgs : EventArgs
     {
         public string Filename { get; set; }
-        public TemplateItem Template { get; set; }
-       // public Dictionary<string, string> ReplacementDictionary { get; set; }
+        public string TemplateName { get; set; }
     }
 }
