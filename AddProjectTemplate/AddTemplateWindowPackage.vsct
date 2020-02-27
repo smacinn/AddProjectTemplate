@@ -46,7 +46,7 @@
         <Parent guid="guidSHLMainMenu" id="IDG_VS_CTXT_PROJECT_ADD_ITEMS"/>
         <Icon guid="guidImages" id="bmpPic1" />
         <Strings>
-          <ButtonText>Add Template</ButtonText>
+          <ButtonText>Add Template From Project</ButtonText>
         </Strings>
       </Button>
     </Buttons>

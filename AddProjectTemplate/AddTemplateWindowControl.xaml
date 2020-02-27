@@ -10,9 +10,11 @@
              d:DesignHeight="300" d:DesignWidth="300"
              Name="MyToolWindow">
     <Grid>
-        <StackPanel Orientation="Vertical">
-            <TextBlock Margin="10" HorizontalAlignment="Center">AddTemplateWindow</TextBlock>
-            <Button Content="Click me!" Click="button1_Click" Width="120" Height="80" Name="button1"/>
+        <StackPanel Orientation="Vertical" Margin="0,0,0,0">
+            <ListBox Height="194" Margin="10,26,10,0" VerticalAlignment="Top"/>
+            <TextBox Height="24" TextWrapping="Wrap" Text="TextBox" Margin="10,10,0,10"/>
         </StackPanel>
+        <Button Content="Add Template" Click="btnAdd_Click" x:Name="btnAdd" Margin="0,0,10,10" HorizontalAlignment="Right" Width="89" Height="32" VerticalAlignment="Bottom"/>
+        <Button Content="Cancel" Click="btnCancel_Click" x:Name="btnCancel" Margin="0,0,104,10" HorizontalAlignment="Right" Width="72" Height="32" VerticalAlignment="Bottom"/>
     </Grid>
 </UserControl>

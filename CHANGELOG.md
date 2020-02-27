@@ -5,8 +5,7 @@
 - [x] template.json for defining project template paths and parameters
 - [x] Custom Wizard for Item Templates
 
-Features that have a checkmark are complete and available for
-download in the
+Features that have a checkmark are complete.
 
 # Change log
 

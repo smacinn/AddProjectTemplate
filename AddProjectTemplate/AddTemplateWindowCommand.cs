@@ -175,78 +175,101 @@ namespace Steven.Macinnis.AddProjectTemplate
 
             this.package.JoinableTaskFactory.RunAsync(async delegate
             {
-                ToolWindowPane window = await this.package.ShowToolWindowAsync(typeof(AddTemplateWindow), 0, true, this.package.DisposalToken);
+                AddTemplateWindow window = await this.package.ShowToolWindowAsync(typeof(AddTemplateWindow), 0, true, this.package.DisposalToken) as AddTemplateWindow;
                 if ((null == window) || (null == window.Frame))
                 {
                     throw new NotSupportedException("Cannot create tool window");
                 }
+                window.Templates = templateList;
+                //window.ReplacementValues = replacementsDictionary;
+
+                ProcessTemplateEventHandler handler = null;
+                try
+                {
+                    handler = (eSender, evt) =>
+                    {
+                        if (evt.Template.TemplateType == Enums.TemplateType.ITEMTEMPLATE)
+                        {
+                            //_dte.Solution.AddFromTemplate();
+                        }
+                        else
+                        {
+                            //_dte.Solution.
+                        }
+                    };
+
+                    window.ProcessTemplate += handler;
+                }
+                finally
+                {
+                    window.ProcessTemplate -= handler;
+                }
             });
         }
 
-
-        private static string FindFolder(object item)
-        {
-            if (item == null)
-                return null;
-
-
-            if (_dte.ActiveWindow is Window2 window && window.Type == vsWindowType.vsWindowTypeDocument)
-            {
-                // if a document is active, use the document's containing directory
-                Document doc = _dte.ActiveDocument;
-                if (doc != null && !string.IsNullOrEmpty(doc.FullName))
-                {
-                    ProjectItem docItem = _dte.Solution.FindProjectItem(doc.FullName);
-
-                    if (docItem != null && docItem.Properties != null)
-                    {
-                        string fileName = docItem.Properties.Item("FullPath").Value.ToString();
-                        if (File.Exists(fileName))
-                            return Path.GetDirectoryName(fileName);
-                    }
-                }
-            }
-
-            string folder = null;
-
-            var projectItem = item as ProjectItem;
-            if (projectItem != null && "{6BB5F8F0-4483-11D3-8BCF-00C04F8EC28C}" == projectItem.Kind) //Constants.vsProjectItemKindVirtualFolder
-            {
-                ProjectItems items = projectItem.ProjectItems;
-                foreach (ProjectItem it in items)
-                {
-                    if (File.Exists(it.FileNames[1]))
-                    {
-                        folder = Path.GetDirectoryName(it.FileNames[1]);
-                        break;
-                    }
-                }
-            }
-            else
-            {
-                var project = item as Project;
-                if (projectItem != null)
-                {
-                    string fileName = projectItem.FileNames[1];
-
-                    if (File.Exists(fileName))
-                    {
-                        folder = Path.GetDirectoryName(fileName);
-                    }
-                    else
-                    {
-                        folder = fileName;
-                    }
+        //private static string FindFolder(object item)
+        //{
+        //    if (item == null)
+        //        return null;
 
 
-                }
-                //else if (project != null)
-                //{
-                //    folder = project.GetRootFolder();
-                //}
-            }
-            return folder;
-        }
+        //    if (_dte.ActiveWindow is Window2 window && window.Type == vsWindowType.vsWindowTypeDocument)
+        //    {
+        //        // if a document is active, use the document's containing directory
+        //        Document doc = _dte.ActiveDocument;
+        //        if (doc != null && !string.IsNullOrEmpty(doc.FullName))
+        //        {
+        //            ProjectItem docItem = _dte.Solution.FindProjectItem(doc.FullName);
+
+        //            if (docItem != null && docItem.Properties != null)
+        //            {
+        //                string fileName = docItem.Properties.Item("FullPath").Value.ToString();
+        //                if (File.Exists(fileName))
+        //                    return Path.GetDirectoryName(fileName);
+        //            }
+        //        }
+        //    }
+
+        //    string folder = null;
+
+        //    var projectItem = item as ProjectItem;
+        //    if (projectItem != null && "{6BB5F8F0-4483-11D3-8BCF-00C04F8EC28C}" == projectItem.Kind) //Constants.vsProjectItemKindVirtualFolder
+        //    {
+        //        ProjectItems items = projectItem.ProjectItems;
+        //        foreach (ProjectItem it in items)
+        //        {
+        //            if (File.Exists(it.FileNames[1]))
+        //            {
+        //                folder = Path.GetDirectoryName(it.FileNames[1]);
+        //                break;
+        //            }
+        //        }
+        //    }
+        //    else
+        //    {
+        //        var project = item as Project;
+        //        if (projectItem != null)
+        //        {
+        //            string fileName = projectItem.FileNames[1];
+
+        //            if (File.Exists(fileName))
+        //            {
+        //                folder = Path.GetDirectoryName(fileName);
+        //            }
+        //            else
+        //            {
+        //                folder = fileName;
+        //            }
+
+
+        //        }
+        //        //else if (project != null)
+        //        //{
+        //        //    folder = project.GetRootFolder();
+        //        //}
+        //    }
+        //    return folder;
+        //}
 
     }
 }

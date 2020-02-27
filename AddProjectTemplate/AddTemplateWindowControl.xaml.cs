@@ -30,5 +30,18 @@
                 string.Format(System.Globalization.CultureInfo.CurrentUICulture, "Invoked '{0}'", this.ToString()),
                 "AddTemplateWindow");
         }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(
+                string.Format(System.Globalization.CultureInfo.CurrentUICulture, "Invoked '{0}'", this.ToString()),
+                "Add Template");
+        }
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(
+                string.Format(System.Globalization.CultureInfo.CurrentUICulture, "Invoked '{0}'", this.ToString()),
+                "Cancelled");
+        }
     }
 }
