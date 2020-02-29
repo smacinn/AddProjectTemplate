@@ -196,10 +196,40 @@ namespace Steven.Macinnis.AddProjectTemplate
                     {
                         if (File.Exists(selectedTemplate.FilePath))
                         {
-                            string fileContents = File.ReadAllText(selectedTemplate.FilePath);
-                            string filename = string.Empty;
+                            string folderPath = string.Empty;
+                            
+                            for(int x = 1; x <= item.Properties.Count; x++)
+                            {
+                                if(item.Properties.Item(x) != null && item.Properties.Item(x).Name == "FullPath")
+                                {
+                                    folderPath = item.Properties.Item(x).Value.ToString();
+                                    break;
+                                }
+                            }
 
-                            item.ProjectItems.AddFromFile(filename);
+                            if (!string.IsNullOrEmpty(folderPath))
+                            {
+                                string fileContents = File.ReadAllText(selectedTemplate.FilePath);
+                                string filename = string.Empty;
+                                string extension = Path.GetExtension(evt.Filename);
+
+                                if (string.IsNullOrEmpty(extension))
+                                {
+                                    extension = Path.GetExtension(selectedTemplate.FilePath);
+                                    filename = evt.Filename + extension;
+                                }
+                                else
+                                {
+                                    filename = evt.Filename;
+                                }
+                                foreach (var pair in replacementsDictionary)
+                                {
+                                    fileContents = fileContents.Replace(pair.Key, pair.Value);
+                                }
+                                filename = Path.Combine(folderPath, filename);
+                                File.WriteAllText(filename,fileContents);
+                                item.ProjectItems.AddFromFile(filename);
+                            }
                         }
                     }
                 };
