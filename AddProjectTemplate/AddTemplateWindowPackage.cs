@@ -16,7 +16,7 @@ using EnvDTE80;
 
 using Task = System.Threading.Tasks.Task;
 
-namespace Steven.Macinnis.AddProjectTemplate
+namespace SMacinnis.AddProjectTemplate
 {
     /// <summary>
     /// This is the class that implements the package exposed by this assembly.

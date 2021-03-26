@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Steven.Macinnis.AddProjectTemplate.Models;
+using SMacinnis.AddProjectTemplate.Models;
 
-namespace Steven.Macinnis.AddProjectTemplate
+namespace SMacinnis.AddProjectTemplate
 {
     public class ProcessTemplateEventArgs : EventArgs
     {

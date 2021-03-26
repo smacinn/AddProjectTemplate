@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Steven.Macinnis.AddProjectTemplate.AddTemplateWindowControl"
+﻿<UserControl x:Class="SMacinnis.AddProjectTemplate.AddTemplateWindowControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"

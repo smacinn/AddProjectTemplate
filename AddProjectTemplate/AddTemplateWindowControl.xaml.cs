@@ -1,10 +1,10 @@
-﻿namespace Steven.Macinnis.AddProjectTemplate
+﻿namespace SMacinnis.AddProjectTemplate
 {
     using System.Diagnostics.CodeAnalysis;
     using System.Windows;
     using System.Windows.Controls;
     using System.Collections.Generic;
-    using Steven.Macinnis.AddProjectTemplate.Models;
+    using SMacinnis.AddProjectTemplate.Models;
 
     
 

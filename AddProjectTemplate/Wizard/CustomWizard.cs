@@ -11,9 +11,9 @@ using EnvDTE;
 using EnvDTE80;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Steven.Macinnis.AddProjectTemplate.Abstract;
+using SMacinnis.AddProjectTemplate.Abstract;
 
-namespace Steven.Macinnis.AddProjectTemplate.Wizard
+namespace SMacinnis.AddProjectTemplate.Wizard
 {
     public class CustomWizard : WizardBase, IWizard
     {

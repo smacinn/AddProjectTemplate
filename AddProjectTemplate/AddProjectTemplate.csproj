@@ -19,7 +19,7 @@
     <ProjectGuid>{ED7695CA-39E0-4055-9F97-B9129E0FCFFB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Steven.Macinnis.AddProjectTemplate</RootNamespace>
+    <RootNamespace>SMacinnis.AddProjectTemplate</RootNamespace>
     <AssemblyName>AddProjectTemplate</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <GeneratePkgDefFile>true</GeneratePkgDefFile>

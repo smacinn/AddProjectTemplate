@@ -23,6 +23,6 @@
   </TemplateContent>
   <WizardExtension>
     <Assembly>AddProjectTemplate, Version=1.0.0.0, Culture=Neutral, PublicKeyToken=86d970f69e4c60ef</Assembly>
-    <FullClassName>Steven.Macinnis.AddProjectTemplate.Wizard.CustomWizard</FullClassName>
+    <FullClassName>SMacinnis.AddProjectTemplate.Wizard.CustomWizard</FullClassName>
   </WizardExtension>
 </VSTemplate>

@@ -14,11 +14,11 @@ using EnvDTE80;
 using System.Linq;
 using Microsoft.VisualStudio.Text;
 using Newtonsoft.Json.Linq;
-using Steven.Macinnis.AddProjectTemplate.Models;
-using Steven.Macinnis.AddProjectTemplate.Abstract;
+using SMacinnis.AddProjectTemplate.Models;
+using SMacinnis.AddProjectTemplate.Abstract;
 using System.IO.Compression;
 
-namespace Steven.Macinnis.AddProjectTemplate
+namespace SMacinnis.AddProjectTemplate
 {
     /// <summary>
     /// Command handler
@@ -87,7 +87,15 @@ namespace Steven.Macinnis.AddProjectTemplate
             // Switch to the main thread - the call to AddCommand in AddTemplateWindowCommand's constructor requires
             // the UI thread.
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync(package.DisposalToken);
-            _dte = await package.GetServiceAsync(typeof(DTE)) as DTE2;
+            var result = await package.GetServiceAsync(typeof(DTE));
+            if (result == null)
+            {
+                throw new Exception("Erro initializing Package, DTE is null");
+            }
+            else
+            {
+                _dte = result as DTE2;
+            }
 
             OleMenuCommandService commandService = await package.GetServiceAsync((typeof(IMenuCommandService))) as OleMenuCommandService;
             Instance = new AddTemplateWindowCommand(package, commandService);
@@ -178,6 +186,8 @@ namespace Steven.Macinnis.AddProjectTemplate
 
                 handler = (eSender, evt) =>
                 {
+                    ThreadHelper.ThrowIfNotOnUIThread();
+
                     var selectedTemplate = templateList[evt.TemplateName];
                     if (selectedTemplate.TemplateType == Enums.TemplateType.ITEMTEMPLATE)
                     {

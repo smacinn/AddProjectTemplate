@@ -3,9 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using Microsoft.VisualStudio.Shell;
-using Steven.Macinnis.AddProjectTemplate.Models;
+using SMacinnis.AddProjectTemplate.Models;
 
-namespace Steven.Macinnis.AddProjectTemplate
+namespace SMacinnis.AddProjectTemplate
 {
     public delegate void ProcessTemplateEventHandler(object sender, ProcessTemplateEventArgs e);
     /// <summary>

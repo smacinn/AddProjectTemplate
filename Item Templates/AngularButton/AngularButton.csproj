@@ -12,7 +12,7 @@
     <ProjectGuid>{02FD2F03-E1BF-42A7-91CE-1F8C1FA99C51}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Steven.Macinnis.AngularButton</RootNamespace>
+    <RootNamespace>SMacinnis.AngularButton</RootNamespace>
     <AssemblyName>AngularButton</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

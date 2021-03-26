@@ -12,7 +12,7 @@
     <ProjectGuid>{E2157B91-9A5C-49D4-B869-D50580AD8E44}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Steven.Macinnis.AngularPage</RootNamespace>
+    <RootNamespace>SMacinnis.AngularPage</RootNamespace>
     <AssemblyName>AngularPage</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

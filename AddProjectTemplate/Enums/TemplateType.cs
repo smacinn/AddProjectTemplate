@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Steven.Macinnis.AddProjectTemplate.Enums
+namespace SMacinnis.AddProjectTemplate.Enums
 {
     public enum TemplateType
     {

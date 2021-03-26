@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Steven.Macinnis.AddProjectTemplate.Enums;
+using SMacinnis.AddProjectTemplate.Enums;
 
-namespace Steven.Macinnis.AddProjectTemplate.Models
+namespace SMacinnis.AddProjectTemplate.Models
 {
     public class TemplateItem
     {
